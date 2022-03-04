@@ -1,0 +1,33 @@
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-body">
+            <span class="h3">LISTA DE NOTICIAS</span>
+            <br>
+            <button class="btn btn-dark btn-lg float-right mt-3" routerLink="/crearnoticia">AGREGAR NOTICIA</button>
+            <br>
+            <br>
+            <div *ngFor="let item of objetonoticia">
+              <strong for="">AUTOR</strong>
+              <br>
+              <td>{{item.autor}}</td>
+              <strong for="">TITULO</strong>
+              <br>
+              <td>{{item.titulo}}</td>
+              <strong for="">NOTICIA</strong>
+              <br>
+              <td>{{item.noticia}}</td>
+              <strong for="">CATEGORIA</strong>
+              <br>
+              <td>{{item.categoria}}</td>
+              <strong for="">FECHA</strong>
+              <br>
+              <td>{{item.fechacreacion}}</td>
+              <i class="fas fa-edit text-info" [routerLink]="['/editarnoticia/', item.id]">EDITAR </i>
+              <i (click)="eliminarnoticia(item.id)" class="fas fa-trash text-danger">BORRAR</i>
+              <br>
+              <br>
+            </div>
+              
+        </div>
+    </div>
+</div>
